@@ -1,5 +1,7 @@
 package ru.clevertec.homework01.consumer;
 
-public interface Consumer<P> {
-	void comsume(P p);
+import ru.clevertec.homework01.product.Product;
+
+public interface Consumer {
+	void consume(Product product);
 }

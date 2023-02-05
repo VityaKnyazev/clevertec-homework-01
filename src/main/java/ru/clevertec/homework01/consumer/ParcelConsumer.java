@@ -1,9 +1,11 @@
 package ru.clevertec.homework01.consumer;
 
-public class ParcelConsumer<P> implements Consumer<P> {
+import ru.clevertec.homework01.product.Product;
+
+public class ParcelConsumer implements Consumer {
 
 	@Override
-	public void comsume(Object p) {
-		System.out.println("Consumer got the parsel P=" + p);		
+	public void consume(Product product) {
+		System.out.println("Consumer got the parsel Product" + product);		
 	}
 }
