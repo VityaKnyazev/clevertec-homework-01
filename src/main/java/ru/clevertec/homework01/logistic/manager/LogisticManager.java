@@ -19,7 +19,7 @@ public class LogisticManager implements Manager {
 	private Producer<?> producer;
 	private Consumer consumer;
 	
-	LogisticManager(Producer<?> producer, Consumer consumer) {
+	public LogisticManager(Producer<?> producer, Consumer consumer) {
 		createLogistic();
 		
 		this.producer = producer;
