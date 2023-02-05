@@ -6,12 +6,15 @@ import ru.clevertec.homework01.transport.Transport;
 
 public abstract class Logistic {
 	private Transport transport;
-	private Producer<?> producer;
+	private Producer<? extends Product> producer;
+	
+	Logistic(Producer<? extends Product> producer) {
+		this.producer = producer;
+	}
 	
 	public void organizeDelivery() {
 		transport = createTransport();
 		
-		producer = createProducer();
 		producerParcel();
 		
 		transport.deliver();
@@ -22,6 +25,5 @@ public abstract class Logistic {
 		product.show();
 	}
 	
-	abstract Producer<?> createProducer();
 	abstract Transport createTransport();
 }
