@@ -1,5 +1,7 @@
 package ru.clevertec.homework01.producer;
 
-public interface Producer<T> {
-	T produce();
+import ru.clevertec.homework01.product.Product;
+
+public interface Producer {
+	Product produce();
 }

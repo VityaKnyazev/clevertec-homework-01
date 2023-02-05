@@ -1,14 +1,14 @@
 package ru.clevertec.homework01.logistic;
 
 import ru.clevertec.homework01.producer.Producer;
-import ru.clevertec.homework01.producer.Product;
+import ru.clevertec.homework01.product.Product;
 import ru.clevertec.homework01.transport.Transport;
 
 public abstract class Logistic {
 	private Transport transport;
-	private Producer<? extends Product> producer;
+	private Producer producer;
 	
-	Logistic(Producer<? extends Product> producer) {
+	Logistic(Producer producer) {
 		this.producer = producer;
 	}
 	
@@ -22,7 +22,7 @@ public abstract class Logistic {
 	
 	private void producerParcel() {
 		Product product = (Product) producer.produce();
-		product.show();
+		System.out.println(product);
 	}
 	
 	abstract Transport createTransport();
