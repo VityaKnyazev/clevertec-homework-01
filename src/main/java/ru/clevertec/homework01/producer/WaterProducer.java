@@ -2,9 +2,7 @@ package ru.clevertec.homework01.producer;
 
 import java.math.BigDecimal;
 
-import ru.clevertec.homework01.producer.WaterProducer.Water;
-
-public class WaterProducer implements Producer<Water> {
+public class WaterProducer implements Producer {
 
 	@Override
 	public Water produce() {

@@ -6,9 +6,9 @@ import ru.clevertec.homework01.transport.Transport;
 
 public abstract class Logistic {
 	private Transport transport;
-	private Producer<? extends Product> producer;
+	private Producer producer;
 	
-	Logistic(Producer<? extends Product> producer) {
+	Logistic(Producer producer) {
 		this.producer = producer;
 	}
 	
