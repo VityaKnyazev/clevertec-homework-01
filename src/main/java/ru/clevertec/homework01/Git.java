@@ -4,13 +4,15 @@ import ru.clevertec.homework01.logistic.AirLogistic;
 import ru.clevertec.homework01.logistic.BoatLogistic;
 import ru.clevertec.homework01.logistic.CarLogistic;
 import ru.clevertec.homework01.logistic.Logistic;
+import ru.clevertec.homework01.producer.GoodProducer;
+import ru.clevertec.homework01.producer.WaterProducer;
 
 public class Git {
     public static void main(String[] args) {
 		System.out.println("Here we starting developing process with fixed bug!");
-		Logistic carLogistic = new CarLogistic();
-		Logistic boatLogistic = new BoatLogistic();
-		Logistic airLogistic = new AirLogistic();
+		Logistic carLogistic = new CarLogistic(new GoodProducer());
+		Logistic boatLogistic = new BoatLogistic(new WaterProducer());
+		Logistic airLogistic = new AirLogistic(new GoodProducer());
 		
 		carLogistic.organizeDelivery();
 		boatLogistic.organizeDelivery();

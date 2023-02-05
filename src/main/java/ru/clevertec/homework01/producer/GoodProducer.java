@@ -10,7 +10,7 @@ public class GoodProducer implements Producer<Good> {
 		return new Good("Some good", "Unknown description", new BigDecimal(50.25));
 	}
 	
-	public static class Good {
+	public static class Good implements Product {
 		private String name;
 		private String description;
 		private BigDecimal price;
@@ -31,6 +31,11 @@ public class GoodProducer implements Producer<Good> {
 
 		public BigDecimal getPrice() {
 			return price;
+		}
+
+		@Override
+		public void show() {
+			System.out.println("Good Producer produced good product[name=]" + name + ", description=" + description + ", price=" + price);
 		}
 	}
 }
