@@ -9,7 +9,6 @@ import ru.clevertec.homework01.producer.WaterProducer;
 
 public class Git {
     public static void main(String[] args) {
-		System.out.println("Here we starting developing process with fixed bug!");
 		Logistic carLogistic = new CarLogistic(new GoodProducer());
 		Logistic boatLogistic = new BoatLogistic(new WaterProducer());
 		Logistic airLogistic = new AirLogistic(new GoodProducer());
