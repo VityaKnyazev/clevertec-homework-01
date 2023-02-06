@@ -8,39 +8,29 @@ import ru.clevertec.homework01.logistic.AirLogistic;
 import ru.clevertec.homework01.logistic.BoatLogistic;
 import ru.clevertec.homework01.logistic.CarLogistic;
 import ru.clevertec.homework01.logistic.Logistic;
-import ru.clevertec.homework01.producer.GoodProducer;
 import ru.clevertec.homework01.producer.Producer;
-import ru.clevertec.homework01.producer.WaterProducer;
-import ru.clevertec.homework01.product.Product;
+
 
 public class LogisticManager implements Manager {
 	private List<Logistic> logistics;
-	
-	private Producer producer;
-	private Consumer consumer;
-	
+
 	public LogisticManager(Producer producer, Consumer consumer) {
-		createLogistic();
-		
-		this.producer = producer;
-		this.consumer = consumer;
+		createLogistic(producer, consumer);
 	}
 
 	@Override
 	public void manage() {
-		Product product = (Product) producer.produce();
-		logistics.forEach(logistic -> logistic.organizeDelivery());		
-		consumer.consume(product);
+		logistics.forEach(logistic -> logistic.organizeDelivery());
 	}
 	
-	private void createLogistic() {
+	private void createLogistic(Producer producer, Consumer consumer) {
 		logistics = new ArrayList<>() {
 			private static final long serialVersionUID = 125843589L;
 
 		{
-			add(new CarLogistic(new GoodProducer()));
-			add(new AirLogistic(new WaterProducer()));
-			add(new BoatLogistic(new GoodProducer()));
+			add(new CarLogistic(producer, consumer));
+			add(new AirLogistic(producer, consumer));
+			add(new BoatLogistic(producer, consumer));
 		}};
 	}
 
