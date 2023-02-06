@@ -4,6 +4,8 @@ import ru.clevertec.homework01.logistic.AirLogistic;
 import ru.clevertec.homework01.logistic.BoatLogistic;
 import ru.clevertec.homework01.logistic.CarLogistic;
 import ru.clevertec.homework01.logistic.Logistic;
+import ru.clevertec.homework01.logistic.manager.LogisticManager;
+import ru.clevertec.homework01.logistic.manager.Manager;
 import ru.clevertec.homework01.producer.GoodProducer;
 import ru.clevertec.homework01.producer.WaterProducer;
 
@@ -16,5 +18,7 @@ public class Git {
 		carLogistic.organizeDelivery();
 		boatLogistic.organizeDelivery();
 		airLogistic.organizeDelivery();
+
+		Manager logisticManager = new LogisticManager(null, null);
 	}
 }
