@@ -8,13 +8,13 @@ import ru.clevertec.homework01.producer.GoodProducer;
 import ru.clevertec.homework01.producer.WaterProducer;
 
 public class Git {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		Logistic carLogistic = new CarLogistic(new GoodProducer());
 		Logistic boatLogistic = new BoatLogistic(new WaterProducer());
 		Logistic airLogistic = new AirLogistic(new GoodProducer());
-		
+
 		carLogistic.organizeDelivery();
 		boatLogistic.organizeDelivery();
-		airLogistic.organizeDelivery();	
+		airLogistic.organizeDelivery();
 	}
 }
