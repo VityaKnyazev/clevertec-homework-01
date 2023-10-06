@@ -17,7 +17,7 @@ public class Main {
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
-        Future<Integer> result = executor.submit(() -> {
+        Future<Double> result = executor.submit(() -> {
             Calculator calculator = new Calculator();
             CalcService calcService = new CalcServiceImpl(calculator);
 
@@ -27,12 +27,14 @@ public class Main {
                 sum += calcService.calculateAndReturn(a, b);
             }
 
-            return sum;
+            Double productPrice = calcService.getCalculationPrice(sum);
+
+            return productPrice;
         });
 
         executor.shutdown();
 
-        System.out.println("Result=" + result.get());
+        System.out.println("Calculated product price=" + result.get());
 
     }
 
