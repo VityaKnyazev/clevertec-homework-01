@@ -12,4 +12,9 @@ public class CalcServiceImpl implements  CalcService {
     public Integer calculateAndReturn(int a, int b) {
         return calculator.getSum(a, b);
     }
+
+    @Override
+    public Double getCalculationPrice(int cost) {
+        return (cost * 0.2D + cost) * 2;
+    }
 }

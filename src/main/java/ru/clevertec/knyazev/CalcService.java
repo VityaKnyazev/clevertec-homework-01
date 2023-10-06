@@ -12,4 +12,13 @@ public interface CalcService {
      */
     Integer calculateAndReturn(int a, int b);
 
+    /**
+     *
+     * Get calculation product price using product cost
+     *
+     * @param cost product
+     * @return product price
+     */
+    Double getCalculationPrice(int cost);
+
 }
