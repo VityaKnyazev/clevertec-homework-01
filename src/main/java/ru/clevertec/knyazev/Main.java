@@ -5,15 +5,8 @@ import java.util.concurrent.*;
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        System.out.println("Hello world!");
-
-
-        System.out.println("Starting developing process!");
-
-        System.out.println("Fixed something!");
-
-        var a = 1;
-        var b = 1;
+        var a = 2;
+        var b = 2;
 
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
