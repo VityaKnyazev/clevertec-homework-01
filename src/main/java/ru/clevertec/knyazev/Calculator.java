@@ -6,4 +6,8 @@ public class Calculator {
         return a + b;
     }
 
+    public Integer getSubtract(Integer a, Integer b) {
+        return a - b;
+    }
+
 }
