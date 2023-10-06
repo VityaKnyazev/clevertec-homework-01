@@ -2,7 +2,6 @@ package ru.clevertec.knyazev;
 
 public class Calculator implements Calculation {
 
-
     @Override
     public Integer getSum(Integer a, Integer b) {
         return a+b;

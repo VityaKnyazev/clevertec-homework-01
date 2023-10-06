@@ -5,10 +5,6 @@ import java.util.concurrent.*;
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        System.out.println("Hello world!");
-
-        System.out.println("Starting developing process!");
-
         var a = 1;
         var b = 1;
 
