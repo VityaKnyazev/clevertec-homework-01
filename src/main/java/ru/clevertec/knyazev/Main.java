@@ -15,10 +15,12 @@ public class Main {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         Future<Integer> result = executor.submit(() -> {
+            Calculator calculator = new Calculator();
+
             Integer sum = 0;
 
             for (int i = 0; i < 10; i++) {
-                sum += getSum(a, b);
+                sum += calculator.getSum(a, b);
             }
 
             return sum;
@@ -26,11 +28,8 @@ public class Main {
 
         executor.shutdown();
 
-        System.out.println(result.get());
+        System.out.println("Result=" + result.get());
 
     }
 
-    private static Integer getSum(Integer a, Integer b) {
-        return a + b;
-    }
 }
