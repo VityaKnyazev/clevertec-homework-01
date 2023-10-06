@@ -19,11 +19,12 @@ public class Main {
 
         Future<Integer> result = executor.submit(() -> {
             Calculator calculator = new Calculator();
+            CalcService calcService = new CalcServiceImpl(calculator);
 
             Integer sum = 0;
 
             for (int i = 0; i < 10; i++) {
-                sum += calculator.getSum(a, b);
+                sum += calcService.calculateAndReturn(a, b);
             }
 
             return sum;
