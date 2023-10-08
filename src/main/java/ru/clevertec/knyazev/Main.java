@@ -5,6 +5,8 @@ import java.util.concurrent.*;
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
+        System.out.println("Some changes to release App v. 1.1");
+
         var a = 2;
         var b = 2;
 
